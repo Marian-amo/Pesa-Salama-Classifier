@@ -63,8 +63,8 @@ The end goal is a deployable monitoring system that flags emerging complaint tre
 
 #### Target Variables
 
-**Primary:** `sentiment_label` — Positive / Neutral / Negative  
-**Secondary:** `complaint_type` — Fraud / Service Failure / Loan / General
+- Primary:`sentiment_label` — Positive / Neutral / Negative  
+- Secondary: `complaint_type` — Fraud / Service Failure / Loan / General
 ---
 
  **Convention:** `MASTER_RAW_kenya_fintech.csv` is the permanent, untouched source of truth. All transformations are applied to copies in the preprocessing notebook.
@@ -113,8 +113,10 @@ Distribution of ratings, review volumes per app, temporal trends, language detec
 
 - Review count per app
 ![Review count per app](images/Review_count_per_app.png)
+
 - star-rating distributions
 ![Star-rating distributions](images/star-rating_distributions.png)
+
 -  Time trend for number of riviews
 ![Time Trend](images/Time_trend.png)
 ### Data Preprocessing
@@ -136,6 +138,8 @@ Latent Dirichlet Allocation is applied to negative reviews only to surface hidde
 | 1 | Failed Transaction |
 | 2 | Hidden Charges |
 | 3 | Customer Support |
+
+
 ![Top Words per Topic](images/Top_Words_per_Topic.png)
 - Because Kenyan users pack multiple complaints into short, emotionally charged reviews, LDA topics overlap significantly. A keyword classifier (`complaint_label`) becomes more reliable for downstream modelling.
 
@@ -191,6 +195,7 @@ TF-IDF vectorisation feeds three classifiers for **sentiment classification** (n
 The FDI is a composite monthly risk score that quantifies systemic financial and operational stress across Kenya's mobile money ecosystem.
 
 - The four normalised indicators:
+
 | Indicator | Description |
 |-----------|-------------|
 | **Complaint Pressure** | Monthly complaint rate |
