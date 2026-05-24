@@ -77,9 +77,9 @@ Distribution of ratings, review volumes per app, temporal trends, language detec
 - Review count per app
 ![Review count per app](images/Review_count_per_app.png)
 - star-rating distributions
-![Star-rating distributions](star-rating_distrubutions.png)
+![Star-rating distributions](images/star-rating_distributions.png)
 -  Time trend for number of riviews
-![Time Trend](Time_trend.png)
+![Time Trend](images/Time_trend.png)
 ### 3. Data Preprocessing
 A multi-step NLP pipeline cleans and prepares the text:
 
@@ -94,11 +94,13 @@ A multi-step NLP pipeline cleans and prepares the text:
 Latent Dirichlet Allocation is applied to negative reviews only to surface hidden complaint themes:
 
 | Topic | Label |
-|-------|-------|
+|-----|-------|
 | 0 | Fraud Complaint |
 | 1 | Failed Transaction |
 | 2 | Hidden Charges |
 | 3 | Customer Support |
+
+
 ![Top Words per Topic](images/Top_Words_per_Topic.png)
 - Because Kenyan users pack multiple complaints into short, emotionally charged reviews, LDA topics overlap significantly. A keyword classifier (`complaint_label`) becomes more reliable for downstream modelling.
 
