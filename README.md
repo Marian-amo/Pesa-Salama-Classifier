@@ -412,7 +412,7 @@ Live dashboard: [View on Tableau Public](https://public.tableau.com/views/pesasa
 To rebuild locally: run Notebook 09, then connect `pesa_salama_MASTER_tableau.csv` in Tableau Public.
 
 ---
-```
+
 ## Python Libraries
 
 | Purpose | Libraries |
@@ -428,7 +428,6 @@ To rebuild locally: run Notebook 09, then connect `pesa_salama_MASTER_tableau.cs
 | Deployment | `streamlit` |
 | Dashboard | Tableau Public |
 
-```
 ## 15.Project Structure
 
 ```
@@ -476,6 +475,7 @@ Pesa-Salama-Classifier/
     ├── model_evaluation_results.csv       # Model comparison results
     └── pesa_salama_MASTER_tableau.csv     # Final Tableau-ready dataset
 
+```
 ## 16.Troubleshooting
 
 | Issue | Fix |
