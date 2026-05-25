@@ -383,8 +383,8 @@ To re-scrape fresh data instead, run **Notebook 01** (internet connection requir
 | 06 | `AfriBerta_model`  Colab | `cleaned_data.csv` | fine-tuned model |
 | 07 | `financial_distress_index` | `cleaned_data.csv` | `monthly_summary.csv` |
 | 08 | `forecasting` | `monthly_summary.csv` | forecast plots |
-| 10 | `tableau_dataset_preparation` | all outputs | `pesa_salama_MASTER_tableau.csv` |
-| 11 | `business_insights` | all outputs | report only |
+| 09 | `tableau_dataset_preparation` | all outputs | `pesa_salama_MASTER_tableau.csv` |
+| 10 | `business_insights` | all outputs | report only |
 
 ---
 ### Notebook 06 — Google Colab (GPU)
