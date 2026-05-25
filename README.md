@@ -308,31 +308,27 @@ Distress Score = ((Fraud Rate × 0.6) + (Negative Rate × 0.4)) × 10
 - Fraud complaint rates vary substantially across apps, with some platforms showing materially higher rates indicative of weaker fraud prevention systems.
 - Higher financial distress scores correlate with operational instability and declining customer trust.
 - Persistent negative sentiment damages customer retention and platform reputation within Kenya's competitive fintech ecosystem.
+- Minority Complaint Categories Are Often Overlooked
+- Customer Feedback Can Serve as a Real-Time Financial Distress Signal
 
-### App-Specific Recommendations
+**Adopt Pesa Salama as an Early-Warning System**
 
-**M-Pesa**
-- Improve OTP verification security
-- Introduce faster fraud dispute resolution systems
-- Strengthen real-time transaction monitoring
+- Use real-time complaint monitoring and the Financial Distress Index (FDI) to identify emerging risks before they escalate into major service disruptions, fraud incidents, or reputational crisis.
 
-**Equity Mobile**
-- Improve transaction reliability and application stability
-- Reduce app crashes and synchronisation issues
-- Enhance customer support accessibility
+**Prioritize Service Reliability Improvements**
 
-**Tala**
-- Improve loan term transparency and repayment communication
-- Strengthen customer education regarding loan conditions
+-Focus on reducing transaction failures, app crashes, login issues, and OTP delivery delays, which account for a large share of customer dissatisfaction and operational friction.
+
+**Strengthen Fraud Detection and Consumer Protection**
+
+- Integrate complaint-based fraud signals into operational workflows to enable faster investigation, response, and customer protection measures.
+
+**Establish Data-Driven Regulatory Oversight**
+
+- Leverage ecosystem-wide monitoring dashboards to support proactive supervision, evidence-based interventions, and improved accountability across fintech providers.
 
 ### Sector-Wide Recommendations
 
-- Deploy AI-driven fraud detection systems
-- Improve multilingual customer support (English, Swahili, Sheng)
-- Develop predictive risk monitoring dashboards
-- Strengthen regulatory compliance monitoring
-- Increase investment in cybersecurity infrastructure
-- Introduce proactive customer complaint escalation systems
 
 ---
 
@@ -345,6 +341,13 @@ Distress Score = ((Fraud Rate × 0.6) + (Negative Rate × 0.4)) × 10
 - HuggingFace account (for model access)
 - Tableau Public (for dashboard)
 
+## Clone & Install
+
+- git clone https://github.com/Marian-amo/Pesa-Salama-Classifier.git
+- cd Pesa-Salama-Classifier
+- python -m venv venv && source venv/bin/activate  # Windows: venv\Scripts\activate
+- pip install -r requirements.txt
+
 ### Install Dependencies
 
 ```bash
@@ -352,8 +355,64 @@ pip install pandas numpy matplotlib seaborn scikit-learn gensim prophet
 pip install transformers datasets sentencepiece accelerate evaluate
 pip install torch xgboost shap streamlit
 pip install google-play-scraper
+Download NLTK data (run once in Python):
+```python
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 ```
-###  Python Libraries
+## Data
+
+The raw dataset is at `data/MASTER_RAW_kenya_fintech.csv` (~53,500 reviews, 6 apps, 2023–2026).
+
+> ⚠️ Do not modify this file. All transformations must be applied to copies.
+
+To re-scrape fresh data instead, run **Notebook 01** (internet connection required). Skip it to use the provided CSV.
+
+---
+## Run the Notebooks (in order)
+
+| # | Notebook | Input | Output |
+|---|----------|-------|--------|
+| 01 | `data_extraction` | Google Play Store | `MASTER_RAW_kenya_fintech.csv` |
+| 02 | `exploratory_data_analysis` | raw CSV | visualisations only |
+| 03 | `data_preprocessing` | raw CSV | `cleaned_data.csv` |
+| 04 | `LDA_modelling` | `cleaned_data.csv` | topic visualisations |
+| 05 | `modelling` | `cleaned_data.csv` | `models/*.pkl`, `model_evaluation_results.csv` |
+| 06 | `AfriBerta_model`  Colab | `cleaned_data.csv` | fine-tuned model |
+| 07 | `financial_distress_index` | `cleaned_data.csv` | `monthly_summary.csv` |
+| 08–09 | `forecasting` | `monthly_summary.csv` | forecast plots |
+| 10 | `tableau_dataset_preparation` | all outputs | `pesa_salama_MASTER_tableau.csv` |
+| 11 | `business_insights` | all outputs | report only |
+
+### Notebook 06 — Google Colab (GPU)
+1. Go to [colab.research.google.com](https://colab.research.google.com)
+2. Upload `06_AfriBerta_model.ipynb`
+3. Upload `cleaned_data.csv` to session storage or mount Google Drive
+4. Set runtime: **Runtime > Change runtime type > GPU**
+5. Run all cells
+
+---
+## Run the Streamlit App
+
+```bash
+cd app
+streamlit run app.py
+```
+Opens at `https://streamlit.io/`. Requires `advancedxgboostmodelfinal.pkl` to be present in `app/`.
+
+---
+
+## Tableau Dashboard
+
+Live dashboard: [View on Tableau Public](https://public.tableau.com/views/pesasalama/Dashboard)
+
+To rebuild locally: run Notebook 09, then connect `pesa_salama_MASTER_tableau.csv` in Tableau Public.
+
+---
+```
+## Python Libraries
 
 | Purpose | Libraries |
 |---------|-----------|
@@ -369,7 +428,7 @@ pip install google-play-scraper
 | Dashboard | Tableau Public |
 
 
-## 15. Project Structure
+## 15.Project Structure
 
 ```
 Pesa-Salama-Classifier/
@@ -395,7 +454,7 @@ Pesa-Salama-Classifier/
 ├── models/                                # Serialized model artefacts
 │   ├── baselinelog_pipeline.pkl           # TF-IDF + Logistic Regression
 │   ├── intermediatead_pipeline.pkl        # TF-IDF + XGBoost (intermediate)
-│   └── advancedxgbmodel.pkl              # Advanced XGBoost model
+│   └── advancedxgbmodel.pkl              # Advanced XGBoost model & SMOTE
 │
 └── notebooks/                             # Analysis pipeline (run in order)
     ├── 01.data_extraction.ipynb
@@ -415,3 +474,13 @@ Pesa-Salama-Classifier/
     ├── monthly_summary.csv                # Aggregated monthly metrics
     ├── model_evaluation_results.csv       # Model comparison results
     └── pesa_salama_MASTER_tableau.csv     # Final Tableau-ready dataset
+
+## 16.Troubleshooting
+
+| Issue | Fix |
+|-------|-----|
+| Missing module | Activate venv, re-run `pip install -r requirements.txt` |
+| Prophet install fails | `pip install prophet --no-build-isolation` |
+| Notebook 06 is slow | Run on Colab with GPU — do not run on CPU |
+| Streamlit model not found | Confirm `advancedxgboostmodelfinal.pkl` is in `app/` |
+| NLTK resource error | Run the `nltk.download()` commands in Section Install & Dependencies|
