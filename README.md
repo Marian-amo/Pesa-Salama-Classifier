@@ -382,7 +382,7 @@ To re-scrape fresh data instead, run **Notebook 01** (internet connection requir
 | 05 | `modelling` | `cleaned_data.csv` | `models/*.pkl`, `model_evaluation_results.csv` |
 | 06 | `AfriBerta_model`  Colab | `cleaned_data.csv` | fine-tuned model |
 | 07 | `financial_distress_index` | `cleaned_data.csv` | `monthly_summary.csv` |
-| 08–09 | `forecasting` | `monthly_summary.csv` | forecast plots |
+| 08 | `forecasting` | `monthly_summary.csv` | forecast plots |
 | 10 | `tableau_dataset_preparation` | all outputs | `pesa_salama_MASTER_tableau.csv` |
 | 11 | `business_insights` | all outputs | report only |
 
