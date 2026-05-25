@@ -379,12 +379,12 @@ To re-scrape fresh data instead, run **Notebook 01** (internet connection requir
 | 02 | `exploratory_data_analysis` | raw CSV | visualisations only |
 | 03 | `data_preprocessing` | raw CSV | `cleaned_data.csv` |
 | 04 | `LDA_modelling` | `cleaned_data.csv` | topic visualisations |
-| 05 | `modelling` | `cleaned_data.csv` | `models/*.pkl`, `model_evaluation_results.csv` |
+| 05 | `multilingual_xgboost_smote` | `cleaned_data.csv` | `models/*.pkl`, `model_evaluation_results.csv` |
 | 06 | `AfriBerta_model`  Colab | `cleaned_data.csv` | fine-tuned model |
 | 07 | `financial_distress_index` | `cleaned_data.csv` | `monthly_summary.csv` |
 | 08 | `forecasting` | `monthly_summary.csv` | forecast plots |
 | 09 | `tableau_dataset_preparation` | all outputs | `pesa_salama_MASTER_tableau.csv` |
-| 10 | `business_insights` | all outputs | report only |
+| 10 | `business_insights_and_reco,,enations` | all outputs | report only |
 
 ---
 ### Notebook 06 — Google Colab (GPU)
@@ -461,13 +461,12 @@ Pesa-Salama-Classifier/
     ├── 02.exploratory_data_analysis.ipynb
     ├── 03.data_preprocessing.ipynb
     ├── 04.LDA modelling.ipynb
-    ├── 05.modelling.ipynb
+    ├── 05.multilingual_xgboost_smote.ipynb
     ├── 06_AfriBerta_model.ipynb           # Run on Google Colab (GPU)
     ├── 07.financial_distress_index_analysis.ipynb
     ├── 08.forcasting.ipynb
-    ├── 09.forcasting.ipynb
-    ├── 10.tableau_dataset_preparation.ipynb
-    ├── 11.business_insights_and_recommendations.ipynb
+    ├── 09.tableau_dataset_preparation.ipynb
+    ├── 10.business_insights_and_recommendations.ipynb
 └── data/
     ├── MASTER_RAW_kenya_fintech.csv       # Raw scraped reviews
     ├── cleaned_data.csv                   # NLP-enhanced cleaned dataset
