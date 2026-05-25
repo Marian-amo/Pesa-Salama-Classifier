@@ -308,31 +308,27 @@ Distress Score = ((Fraud Rate × 0.6) + (Negative Rate × 0.4)) × 10
 - Fraud complaint rates vary substantially across apps, with some platforms showing materially higher rates indicative of weaker fraud prevention systems.
 - Higher financial distress scores correlate with operational instability and declining customer trust.
 - Persistent negative sentiment damages customer retention and platform reputation within Kenya's competitive fintech ecosystem.
+- Minority Complaint Categories Are Often Overlooked
+- Customer Feedback Can Serve as a Real-Time Financial Distress Signal
 
-### App-Specific Recommendations
+**Adopt Pesa Salama as an Early-Warning System**
 
-**M-Pesa**
-- Improve OTP verification security
-- Introduce faster fraud dispute resolution systems
-- Strengthen real-time transaction monitoring
+- Use real-time complaint monitoring and the Financial Distress Index (FDI) to identify emerging risks before they escalate into major service disruptions, fraud incidents, or reputational crisis.
 
-**Equity Mobile**
-- Improve transaction reliability and application stability
-- Reduce app crashes and synchronisation issues
-- Enhance customer support accessibility
+**Prioritize Service Reliability Improvements**
 
-**Tala**
-- Improve loan term transparency and repayment communication
-- Strengthen customer education regarding loan conditions
+-Focus on reducing transaction failures, app crashes, login issues, and OTP delivery delays, which account for a large share of customer dissatisfaction and operational friction.
+
+**Strengthen Fraud Detection and Consumer Protection**
+
+- Integrate complaint-based fraud signals into operational workflows to enable faster investigation, response, and customer protection measures.
+
+**Establish Data-Driven Regulatory Oversight**
+
+- Leverage ecosystem-wide monitoring dashboards to support proactive supervision, evidence-based interventions, and improved accountability across fintech providers.
 
 ### Sector-Wide Recommendations
 
-- Deploy AI-driven fraud detection systems
-- Improve multilingual customer support (English, Swahili, Sheng)
-- Develop predictive risk monitoring dashboards
-- Strengthen regulatory compliance monitoring
-- Increase investment in cybersecurity infrastructure
-- Introduce proactive customer complaint escalation systems
 
 ---
 
