@@ -407,14 +407,12 @@ Opens at `https://streamlit.io/`. Requires `advancedxgboostmodelfinal.pkl` to be
 
 ## Tableau Dashboard
 
-Live dashboard: [View on Tableau Public](https://public.tableau.com/views/pesasalama/Dashboard)
-
 To rebuild locally: run Notebook 09, then connect `pesa_salama_MASTER_tableau.csv` in Tableau Public.
 
 ---
 ## Presentation Slides
  Presentation : [View presentation](https://docs.google.com/presentation/d/1ybLz9adcrgZCl9ffYGNPxK3F_auCVp3QaNxUJ7D8hdI/edit?usp=sharing)
- 
+
 ## Python Libraries
 
 | Purpose | Libraries |
