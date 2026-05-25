@@ -386,6 +386,7 @@ To re-scrape fresh data instead, run **Notebook 01** (internet connection requir
 | 10 | `tableau_dataset_preparation` | all outputs | `pesa_salama_MASTER_tableau.csv` |
 | 11 | `business_insights` | all outputs | report only |
 
+---
 ### Notebook 06 — Google Colab (GPU)
 1. Go to [colab.research.google.com](https://colab.research.google.com)
 2. Upload `06_AfriBerta_model.ipynb`
@@ -415,7 +416,7 @@ To rebuild locally: run Notebook 09, then connect `pesa_salama_MASTER_tableau.cs
 ## Python Libraries
 
 | Purpose | Libraries |
-|---------|-----------|
+|----------|------------|
 | Data Collection | `google-play-scraper` |
 | Data Processing | `pandas`, `numpy`, `nltk`, `re` |
 | Visualisation | `matplotlib`, `seaborn`, `wordcloud` |
@@ -427,7 +428,7 @@ To rebuild locally: run Notebook 09, then connect `pesa_salama_MASTER_tableau.cs
 | Deployment | `streamlit` |
 | Dashboard | Tableau Public |
 
-
+```
 ## 15.Project Structure
 
 ```
