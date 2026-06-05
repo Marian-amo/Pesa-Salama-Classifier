@@ -70,8 +70,15 @@ jobs:
             --tb=short \
             --no-header \
             -q
+      # ── 6. Notebook smoke tests ───────────────────────────────────────────────
+      - name: Test key notebooks (nbmake)
+        run: |
+          pip install nbmake
+          pytest --nbmake notebooks/03.data_preprocessing.ipynb \
+                          notebooks/05.modelling.ipynb \
+            --nbmake-timeout=120      
 
-      # ── 6. Summary ────────────────────────────────────────────────────────────
+      # ── 7. Summary ────────────────────────────────────────────────────────────
       - name: Print summary
         if: always()
         run: echo "CI complete. Check the test output above for details."
