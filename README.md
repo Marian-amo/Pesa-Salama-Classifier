@@ -1,4 +1,5 @@
 # Pesa-Salama-Classifier
+![CI](https://github.com/Marian-amo/Pesa-Salama-Classifier/actions/workflows/ci.yml/badge.svg)
 ## Real-time Financial Complaint Monitor and Distress Index for Kenya’s Mobile Money Ecosystem
 
 An end-to-end NLP pipeline that collects, cleans, and classifies customer reviews from Kenya's top fintech apps, combining classical machine learning with a multilingual transformer (AfriBERTa) to power a real-time financial complaint monitoring system.
