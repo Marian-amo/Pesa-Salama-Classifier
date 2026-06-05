@@ -218,3 +218,17 @@ __marimo__/
 .streamlit/secrets.toml
 #.DS_Store
 .DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Model artifacts
+*.pkl
+
+# App runtime files
+*.json
+
+# OS
+.DS_Store
