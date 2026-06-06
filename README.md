@@ -243,6 +243,13 @@ Facebook Prophet is used for 6-month ahead forecasting of monthly complaint volu
 | Settings storage | `pesa_salama_settings.json` |
 | Hosting | Streamlit Community Cloud |
 
+### Demonstration of the app
+
+This is the link of video and voice over of how to run the app
+
+ [demo link](https://www.loom.com/share/a4c54f1df1b74ff387ccb852e79fdbf6)
+
+
 ### Application Functionality
 
 **Single Review Analysis**
@@ -312,6 +319,8 @@ Distress Score = ((Fraud Rate × 0.6) + (Negative Rate × 0.4)) × 10
 - Minority Complaint Categories Are Often Overlooked
 - Customer Feedback Can Serve as a Real-Time Financial Distress Signal
 
+### Recommendations
+
 **Adopt Pesa Salama as an Early-Warning System**
 
 - Use real-time complaint monitoring and the Financial Distress Index (FDI) to identify emerging risks before they escalate into major service disruptions, fraud incidents, or reputational crisis.
@@ -328,10 +337,18 @@ Distress Score = ((Fraud Rate × 0.6) + (Negative Rate × 0.4)) × 10
 
 - Leverage ecosystem-wide monitoring dashboards to support proactive supervision, evidence-based interventions, and improved accountability across fintech providers.
 
-### Sector-Wide Recommendations
 
+### Future Work Roadmap
 
----
+| Priority | Initiative | Effort | Owner | Milestone |
+|----------|-----------|--------|-------|-----------|
+| 🔴 High | **Production API & Dashboard Deployment** — Host the FDI dashboard and REST API on a cloud platform (AWS/GCP) with CI/CD pipelines | 3–4 weeks | ML Engineer + DevOps | 
+| 🔴 High | **Real-Time Data Ingestion** — Replace batch scraping with streaming ingestion (Kafka/Pub-Sub) for live complaint monitoring | 4–6 weeks | Data Engineer | 
+| 🟡 Medium | **Model Retraining Pipeline** — Automate periodic fine-tuning of AfriBERTa on new complaint data to prevent model drift | 2–3 weeks | ML Engineer | 
+| 🟡 Medium | **Multilingual Expansion** — Extend Sheng and Swahili coverage; add support for other East African fintech markets | 4–5 weeks | NLP Researcher | |
+| 🟡 Medium | **Regulator-Facing Dashboard** — Build a read-only supervision portal for CBK/CA with exportable FDI reports | 3–4 weeks | Full-Stack + Domain Expert | 
+| 🟢 Low | **User Feedback Loop** — Allow analysts to flag misclassified complaints to continuously improve model accuracy | 2 weeks | ML Engineer | 
+| 🟢 Low | **Fraud Signal Integration** — Connect complaint-derived fraud signals to existing fintech risk management APIs | 5–6 weeks | Security + Backend |
 
 ## Installation & Setup
 
