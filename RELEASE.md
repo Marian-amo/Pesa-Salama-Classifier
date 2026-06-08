@@ -186,7 +186,7 @@ Any future expansion of the project will continue to prioritize:
 
 ---
 
-## 7. Maintainer
+## 7. Maintainers
 
 **Project:** Pesa Salama – Mobile Money Customer Sentiment Analysis
 
